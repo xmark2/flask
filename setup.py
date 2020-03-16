@@ -7,7 +7,7 @@ setup(
     name = 'my_app',
     version='1.0',
     license='GNU General Public License v3',
-    author='xmark2'
+    author='xmark2',
     author_email='xmark2@gmail.com',
     description='Hello world application for Flask',
     packages=['my_app'],
