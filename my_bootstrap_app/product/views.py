@@ -1,7 +1,7 @@
 from werkzeug.exceptions import abort
 from flask import render_template
 from flask import Blueprint
-from my_app.product.models import PRODUCTS
+from my_bootstrap_app.product.models import PRODUCTS
 
 product_blueprint = Blueprint('product', __name__)
 

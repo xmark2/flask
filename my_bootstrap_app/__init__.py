@@ -1,6 +1,6 @@
 import ccy
 from flask import Flask, request
-from my_app.product.views import product_blueprint
+from my_bootstrap_app.product.views import product_blueprint
 
 app = Flask(__name__)
 app.register_blueprint(product_blueprint)

@@ -4,7 +4,7 @@ import os
 from setuptools import setup
 
 setup(
-    name = 'my_app',
+    name = 'my_bootstrap_app',
     version='1.0',
     license='GNU General Public License v3',
     author='xmark2',
