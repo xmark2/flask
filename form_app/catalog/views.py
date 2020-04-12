@@ -122,9 +122,9 @@ def create_category():
         flash(
             'The category %s has been created' % name, 'success'
         )
-        return redirect(
-            url_for('catalog.category', id=category.id)
-        )
+        # return redirect(
+        #     url_for('catalog.category', id=category.id)
+        # )
 
     if form.errors:
         flash(form.errors, 'danger')

@@ -1,0 +1,86 @@
+{
+    "category_id": {
+        "fields": [
+            "category_id",
+            "product_category_id"
+        ],
+        "indexes": [
+            2089,
+            2114
+        ],
+        "tables": [
+            "categories",
+            "products"
+        ]
+    },
+    "customer_id": {
+        "fields": [
+            "customer_id",
+            "order_customer_id"
+        ],
+        "indexes": [
+            2092,
+            2111
+        ],
+        "tables": [
+            "customers",
+            "orders"
+        ]
+    },
+    "department_id": {
+        "fields": [
+            "category_department_id",
+            "department_id"
+        ],
+        "indexes": [
+            2090,
+            2101
+        ],
+        "tables": [
+            "categories",
+            "departments"
+        ]
+    },
+    "order_id": {
+        "fields": [
+            "order_item_order_id",
+            "order_id"
+        ],
+        "indexes": [
+            2104,
+            2109
+        ],
+        "tables": [
+            "order_items",
+            "orders"
+        ]
+    },
+    "product_id": {
+        "fields": [
+            "order_item_product_id",
+            "product_id"
+        ],
+        "indexes": [
+            2105,
+            2113
+        ],
+        "tables": [
+            "order_items",
+            "products"
+        ]
+    },
+    "product_price": {
+        "fields": [
+            "order_item_product_price",
+            "product_price"
+        ],
+        "indexes": [
+            2108,
+            2117
+        ],
+        "tables": [
+            "order_items",
+            "products"
+        ]
+    }
+}
