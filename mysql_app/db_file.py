@@ -15,6 +15,7 @@ import _pickle as cPickle
 
 import numpy as np
 
+import sqlite3
 
 pp = pprint.PrettyPrinter(indent=4)
 
@@ -63,26 +64,39 @@ df = pd.read_sql("select * from INFORMATION_SCHEMA.columns", con)
 df = df[['TABLE_SCHEMA','TABLE_NAME','COLUMN_NAME']]
 df = df.loc[df['TABLE_SCHEMA'] == 'retail_db']
 
-columns = df['COLUMN_NAME'].values.tolist()
 
-field_matches = {}
-for column in columns:
-	indexes = []
-	tables = []
-	fields = []
-	for index, row in df.iterrows():
-		if column in row['COLUMN_NAME']:
-			indexes.append(index)
-			tables.append(row['TABLE_NAME'])
-			fields.append(row['COLUMN_NAME'])
-	dic = {'indexes':indexes,'tables':tables,'fields':fields}
-	if len(indexes)>1:		
-		field_matches.update({column:dic})
+# def 
 
-print(field_matches)
 
-with open('data/fields.json','w') as json_file:
-    json.dump(field_matches,json_file,indent=4, sort_keys=True)
+cnx = sqlite3.connect(':memory:')
+
+# df.to_sql('new_table_name', conn, if_exists='replace', index=False)
+df.to_sql(name='tables', con=cnx, index=False)
+
+df2 = pd.read_sql('select * from tables', cnx)
+
+print(df2)
+
+# columns = df['COLUMN_NAME'].values.tolist()
+
+# field_matches = {}
+# for column in columns:
+# 	indexes = []
+# 	tables = []
+# 	fields = []
+# 	for index, row in df.iterrows():
+# 		if column in row['COLUMN_NAME']:
+# 			indexes.append(index)
+# 			tables.append(row['TABLE_NAME'])
+# 			fields.append(row['COLUMN_NAME'])
+# 	dic = {'indexes':indexes,'tables':tables,'fields':fields}
+# 	if len(indexes)>1:		
+# 		field_matches.update({column:dic})
+
+# print(field_matches)
+
+# with open('data/fields.json','w') as json_file:
+# 	json.dump(field_matches,json_file,indent=4, sort_keys=True)
 
 # print(df.columns)
 

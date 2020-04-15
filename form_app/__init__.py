@@ -7,7 +7,9 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = os.path.realpath('.') + '/my_app/static/uploads'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+# sqlite :memory: identifier is the default if no filepath is present
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://'
 app.config['WTF_CSRF_SECRET_KEY'] = 'random key for form'
 db = SQLAlchemy(app)
 
