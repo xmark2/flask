@@ -10,7 +10,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.1
 MarkupSafe==1.1.1
 mysql-connector==2.2.9
-numpy==1.18.2
+numpy==1.22.0
 pandas==0.24.2
 PyMySQL==0.9.3
 python-dateutil==2.8.1
